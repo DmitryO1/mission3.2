@@ -4,15 +4,13 @@
 public class BubleSort {
 
 public static int [] sort(int [] a){
-    boolean check = true;
-    while (check)
-    for(int i=1;i<a.length;i++) {
-        check = false;
-        if (a[i-1] > a[i]) {
-            int temp = a[i];
-            a[i] = a[i-1];
-            a[i-1] = temp;
-            check=true;
+    for(int i=a.length-1;i>0;i--) {
+        for(int j=0;j<i;j++){
+            if (a[j] > a[j+1]) {
+                int temp = a[j];
+                a[j] = a[j+1];
+                a[j+1] = temp;
+            }
         }
     }
     return a;

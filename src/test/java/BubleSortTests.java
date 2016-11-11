@@ -29,9 +29,21 @@ public class BubleSortTests {
         assertArrayEquals(new int[]{0,1,2},BubleSort.sort(new int[]{2,1,0}));
     System.out.println("Positive test has been passed '#4'");
 }
+    @Test//Positive #5
+    public void unsortedListWithListLength6(){
+        assertArrayEquals(new int[]{0,1,2,3,4,10},BubleSort.sort(new int[]{10,2,3,4,1,0}));
+        System.out.println("Negative test has been passed '#4'");
+    }
     @Test(expected = AssertionError.class)//Negative #1
     public void unsortedListLengthLongLegth(){
         assertArrayEquals(new int[]{0,1,2},BubleSort.sort(new int[]{2,1,0,4}));
         System.out.println("Negative test has been passed '#4'");
     }
+
+    @Test(expected = AssertionError.class)//Negative #2
+    public void unsortedListWithNull(){
+        assertArrayEquals(new int[]{0,1,2},BubleSort.sort(new int[]{}));
+        System.out.println("Negative test has been passed '#4'");
+    }
+
 }
